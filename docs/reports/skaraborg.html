@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.11" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Regional industrial symbiosis in Skaraborg</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="report.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Regional industrial symbiosis in Skaraborg</h1>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#summary" id="toc-summary">1. Summary</a></li>
+<li><a href="#study-area-and-data" id="toc-study-area-and-data">2. Study
+area and data</a></li>
+<li><a href="#method" id="toc-method">3. Method</a></li>
+<li><a href="#the-regions-materials" id="toc-the-regions-materials">4.
+The region’s materials</a></li>
+<li><a href="#symbiosis-potential-at-three-scales"
+id="toc-symbiosis-potential-at-three-scales">5. Symbiosis potential at
+three scales</a></li>
+<li><a href="#what-is-replaced-and-which-waste-is-used"
+id="toc-what-is-replaced-and-which-waste-is-used">6. What is replaced
+and which waste is used</a></li>
+<li><a href="#kommuner-who-supplies-whom"
+id="toc-kommuner-who-supplies-whom">7. Kommuner: who supplies
+whom</a></li>
+<li><a href="#against-total-regional-material-use"
+id="toc-against-total-regional-material-use">8. Against total regional
+material use</a></li>
+<li><a href="#skaraborg-in-västra-götaland-county"
+id="toc-skaraborg-in-västra-götaland-county">9. Skaraborg in Västra
+Götaland County</a></li>
+<li><a href="#how-robust-are-the-results"
+id="toc-how-robust-are-the-results">10. How robust are the
+results?</a></li>
+<li><a href="#limitations" id="toc-limitations">11. Limitations</a></li>
+<li><a href="#reproducibility-and-data-availability"
+id="toc-reproducibility-and-data-availability">12. Reproducibility and
+data availability</a></li>
+</ul>
+</nav>
+<p><em>How much of the region’s industrial waste could replace raw
+materials that its firms buy? Reference year 2022.</em></p>
+<p>This report quantifies the potential for <strong>regional industrial
+symbiosis</strong> in Skaraborg’s 15 kommuner. Symbiosis here means
+waste from one firm replacing a raw or semi-finished material that
+another firm would otherwise import. The analysis follows one
+reproducible method on three nested scales:</p>
+<ul>
+<li><strong>the region</strong> as a single unit</li>
+<li><strong>each kommun</strong>, and exchanges between kommuner</li>
+<li><strong>individual firms</strong></li>
+</ul>
+<p>It also places Skaraborg within Västra Götaland County, analysed with
+the same method.</p>
+<p>All figures are model estimates built from official statistics. They
+are not measured flows. The results are aggregated so that no figure
+describes a single firm.</p>
+<hr />
+<h2 id="summary">1. Summary</h2>
+<ul>
+<li><p><strong>Industry in Skaraborg generates about 0.81 Mt of waste a
+year</strong> (95 % interval 0.59–1.03 Mt):</p>
+<ul>
+<li>construction 280 kt</li>
+<li>manufacturing 280 kt</li>
+<li>water and waste services 150 kt</li>
+<li>agriculture and forestry 53 kt</li>
+<li>energy 37 kt</li>
+<li>quarries 10 kt</li>
+</ul></li>
+<li><p><strong>Production firms import about 0.46 Mt of raw and
+semi-finished goods a year, worth 2.5 billion SEK.</strong> Two-thirds
+of these imports are minerals (CN</p>
+<p>25) and stone products (CN 68), and the cement and mineral-wool
+industry alone accounts for 62 % of the tonnes. These imports are the
+demand that local waste can replace.</p></li>
+<li><p><strong>How much can be replaced depends above all on what we
+know about which waste can substitute which product.</strong> Each line
+below is the whole region pooled (LP optimum):</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Matching knowledge</th>
+<th>Waste reused</th>
+<th>Imports replaced</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Documented industrial exchanges only (MAESTRI)</td>
+<td><strong>20 kt</strong></td>
+<td><strong>4.3 %</strong> of tonnes</td>
+<td><strong>58 MSEK</strong></td>
+</tr>
+<tr>
+<td>Adding the reviewed waste-to-resource knowledge graph (W2RKG)</td>
+<td><strong>203 kt</strong></td>
+<td><strong>44 %</strong> of tonnes</td>
+<td><strong>460 MSEK</strong> a year (18 % of the import bill)</td>
+</tr>
+</tbody>
+</table>
+<p>The first line is the conservative baseline; the second is the
+best-supported broad estimate. Tonnes come from allocations that
+maximise mass and values from allocations that maximise value
+(§5).</p></li>
+<li><p><strong>The binding constraint is matching knowledge, not
+demand.</strong> With documented exchanges only, 661 of the 810 kt of
+waste has no known compatible product. With the knowledge graph, the
+main limit becomes demand: much of the waste could be used, but the
+region does not import enough of the products it could replace.</p></li>
+<li><p><strong>Kommuner cannot do it alone.</strong> Within kommun
+borders only 31 % (MAESTRI) to 64 % (with W2RKG) of the regional
+potential is realised. Exchange between kommuner closes almost all of
+the gap: the two-stage kommun allocation reaches 98–100 % of the
+regional optimum.</p></li>
+<li><p><strong>Three hubs receive most exchanged material:</strong></p>
+<ul>
+<li>Skövde (cement)</li>
+<li>Mariestad (paper)</li>
+<li>Götene (food and stone)</li>
+</ul>
+<p>Lidköping, Falköping and Skara are the largest net
+suppliers.</p></li>
+<li><p><strong>At firm level</strong>, 12–16 kt (MAESTRI) or 103–121 kt
+(with W2RKG) can be matched firm to firm. The average straight-line
+distance is 20–26 km.</p></li>
+<li><p><strong>Against the region’s total material use</strong> (8.6 Mt,
+including domestic extraction and freight from the rest of Sweden),
+reused waste could replace 0.4 % (MAESTRI) to 3.8 % (with W2RKG) of
+use.</p></li>
+<li><p><strong>Inside Västra Götaland</strong>, Skaraborg is a net
+receiver of by-products: see §9.</p></li>
+</ul>
+<hr />
+<h2 id="study-area-and-data">2. Study area and data</h2>
+<p>Skaraborg comprises 15 kommuner:</p>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Kommun</th>
+<th>Code</th>
+<th>Kommun</th>
+<th>Code</th>
+<th>Kommun</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1444</td>
+<td>Grästorp</td>
+<td>1471</td>
+<td>Götene</td>
+<td>1495</td>
+<td>Skara</td>
+</tr>
+<tr>
+<td>1445</td>
+<td>Essunga</td>
+<td>1472</td>
+<td>Tibro</td>
+<td>1496</td>
+<td>Skövde</td>
+</tr>
+<tr>
+<td>1446</td>
+<td>Karlsborg</td>
+<td>1473</td>
+<td>Töreboda</td>
+<td>1497</td>
+<td>Hjo</td>
+</tr>
+<tr>
+<td>1447</td>
+<td>Gullspång</td>
+<td>1493</td>
+<td>Mariestad</td>
+<td>1498</td>
+<td>Tidaholm</td>
+</tr>
+<tr>
+<td>1470</td>
+<td>Vara</td>
+<td>1494</td>
+<td>Lidköping</td>
+<td>1499</td>
+<td>Falköping</td>
+</tr>
+</tbody>
+</table>
+<p>The region has 133,700 jobs: 2.4 % of Sweden’s jobs but 4.7 % of its
+manufacturing jobs. Industry is the backbone: engines and vehicles in
+Skövde, food in Götene and Skara, and cement, stone and concrete across
+the plains.</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Data</th>
+<th>Source</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Employment by workplace, kommun and NACE (2022)</td>
+<td>SCB, workplace register (FDB)</td>
+<td>where waste is generated and inputs are used</td>
+</tr>
+<tr>
+<td>Import microdata by organisation and CN8 (2022)</td>
+<td>SCB, foreign trade statistics</td>
+<td>input demand and regional prices</td>
+</tr>
+<tr>
+<td>Waste generated by sector, Sweden 2004–2022</td>
+<td>Eurostat <code>env_wasgen</code></td>
+<td>waste per worker</td>
+</tr>
+<tr>
+<td>Waste composition by List of Waste code</td>
+<td>firm-level waste profiles</td>
+<td>split of each sector’s waste into waste types</td>
+</tr>
+<tr>
+<td>Domestic extraction by product</td>
+<td>Eurostat EW-MFA</td>
+<td>regional material balance</td>
+</tr>
+<tr>
+<td>Lorry freight (2021–2023)</td>
+<td>Trafikanalys, lorry survey</td>
+<td>flows to and from the rest of Sweden</td>
+</tr>
+<tr>
+<td>Waste → product substitutions</td>
+<td>MAESTRI (Patricio et al. 2022); W2RKG knowledge graph (Zhao et
+al. 2025, <em>Nature Communications</em>)</td>
+<td>which waste can replace which product</td>
+</tr>
+<tr>
+<td>Firm locations and size classes</td>
+<td>firm registry (706 firms in sectors A–E)</td>
+<td>firm-level allocation</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="method">3. Method</h2>
+<p>The method has five steps, and all of them can be rerun from the
+code.</p>
+<ol type="1">
+<li><strong>Waste generation (W).</strong> Workers in each kommun and
+NACE4 class are multiplied by Swedish waste-per-worker coefficients.
+These come from a regression of national waste on employment, 2004–2022.
+The result is split into List of Waste (LoW) codes with sector waste
+profiles.
+<ul>
+<li>Manufacturing coefficients are scaled to each sub-sector so that the
+national total is kept.</li>
+<li>Quarries get their own coefficient (100 t per worker), separate from
+metal mining.</li>
+</ul></li>
+<li><strong>Input demand (D).</strong> Imports of each organisation are
+shared out to its workplaces in the region by their share of the
+organisation’s Swedish workforce. Only raw and semi-finished goods
+bought by production sectors (A–F) count as demand.</li>
+<li><strong>Matching.</strong> A compatibility matrix lists which LoW
+waste codes can replace which CN4 products.
+<ul>
+<li><strong>Baseline:</strong> documented industrial exchanges
+(MAESTRI).</li>
+<li><strong>Broad estimate:</strong> MAESTRI plus the W2RKG knowledge
+graph. The graph summarises 33,679 waste-to-resource links from 7,841
+scientific papers. Only pairs accepted in a plausibility review are used
+(72 pairs).</li>
+<li>Implausible pairs are excluded throughout, for example quarry rock
+as coal, ash as refined rare metals, or rubble as gypsum.</li>
+</ul></li>
+<li><strong>Allocation</strong>, on three nested scales:
+<ul>
+<li><strong>Region:</strong> Skaraborg as one pool. The
+linear-programming optimum is the maximum that can be reused.</li>
+<li><strong>Kommun:</strong> first within each kommun, then between
+kommuner (two-stage).</li>
+<li><strong>Firms:</strong> each firm’s waste goes to the nearest
+compatible firms, on two bases. <em>Bottom-up</em> uses registry firms
+only; <em>top-down</em> scales the firms up to the kommun totals.</li>
+</ul>
+Each scale is run twice: maximising tonnes reused (<em>mass</em> regime)
+or the value of replaced imports (<em>value</em> regime).</li>
+<li><strong>Valuation and indicators.</strong> Replaced tonnes are
+valued at the unit price that the region’s own importers pay for each
+product. The indicators are:
+<ul>
+<li>share of waste reused</li>
+<li>share of imported inputs replaced, by mass and by value</li>
+<li>value replaced</li>
+<li>the split between intra-kommun and inter-kommun flows</li>
+<li>distance at firm level</li>
+</ul></li>
+</ol>
+<p>A regional material balance places the results in a wider frame. It
+combines domestic extraction, imports and lorry freight in and out,
+giving apparent regional material use.</p>
+<hr />
+<h2 id="the-regions-materials">4. The region’s materials</h2>
+<h3 id="material-balance">4.1 Material balance</h3>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Mt</th>
+<th>MSEK</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Domestic extraction</td>
+<td>7.18</td>
+<td>17,284</td>
+</tr>
+<tr>
+<td>Imports from abroad</td>
+<td>1.48</td>
+<td>50,197</td>
+</tr>
+<tr>
+<td>Inflow from the rest of Sweden (lorry)</td>
+<td>3.74</td>
+<td>68,994</td>
+</tr>
+<tr>
+<td>Outflow to the rest of Sweden and abroad (lorry)</td>
+<td>3.83</td>
+<td>86,152</td>
+</tr>
+<tr>
+<td><strong>Apparent regional use</strong></td>
+<td><strong>8.57</strong></td>
+<td><strong>50,322</strong></td>
+</tr>
+<tr>
+<td>Circulation within Skaraborg (lorry)</td>
+<td>7.39</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p>Skaraborg extracts about 7.2 Mt a year: 4.2 Mt of stone, gravel and
+sand from its quarries, and crops, grass and wood from farms and
+forests. Minerals (about 54 %) and biomass (about 32 %) dominate
+regional use, almost all extracted locally. What leaves the region is
+processed (food, cement and mineral products, vehicles). What arrives is
+raw (stone, fuels, chemicals, metals).</p>
+<h3 id="waste-generated">4.2 Waste generated</h3>
+<table>
+<thead>
+<tr>
+<th>Sector</th>
+<th>kt</th>
+<th>95 % interval</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Construction (F)</td>
+<td>280</td>
+<td>203–357</td>
+</tr>
+<tr>
+<td>Manufacturing (C)</td>
+<td>280</td>
+<td>207–352</td>
+</tr>
+<tr>
+<td>Water and waste services (E)</td>
+<td>150</td>
+<td>113–187</td>
+</tr>
+<tr>
+<td>Agriculture and forestry (A)</td>
+<td>53</td>
+<td>24–81</td>
+</tr>
+<tr>
+<td>Energy (D)</td>
+<td>37</td>
+<td>32–41</td>
+</tr>
+<tr>
+<td>Quarrying (B)</td>
+<td>10</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>810</strong></td>
+<td><strong>591–1,029</strong></td>
+</tr>
+</tbody>
+</table>
+<p>By waste chapter:</p>
+<table>
+<thead>
+<tr>
+<th>Waste chapter</th>
+<th>Share</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Construction and demolition wastes (LoW 17)</td>
+<td>26 %</td>
+</tr>
+<tr>
+<td>Waste-treatment residues (LoW 19)</td>
+<td>19 %</td>
+</tr>
+<tr>
+<td>Municipal-type wastes (LoW 20)</td>
+<td>14 %</td>
+</tr>
+<tr>
+<td>Metal shaping residues (LoW 12)</td>
+<td>11 %</td>
+</tr>
+<tr>
+<td>Food and agricultural residues (LoW 02)</td>
+<td>8 %</td>
+</tr>
+<tr>
+<td>Packaging (LoW 15)</td>
+<td>6 %</td>
+</tr>
+<tr>
+<td>Wood processing (LoW 03)</td>
+<td>5 %</td>
+</tr>
+</tbody>
+</table>
+<h3 id="imported-inputs">4.3 Imported inputs</h3>
+<p>Production firms import about <strong>461 kt</strong> of raw and
+semi-finished goods (2,533 MSEK).</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Buying industry (NACE2)</th>
+<th>kt</th>
+<th>Share</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>23 Non-metallic minerals (cement, mineral wool, concrete)</td>
+<td>286</td>
+<td>62 %</td>
+</tr>
+<tr>
+<td>10 Food</td>
+<td>33</td>
+<td>7 %</td>
+</tr>
+<tr>
+<td>08 Quarrying</td>
+<td>27</td>
+<td>6 %</td>
+</tr>
+<tr>
+<td>16 Wood</td>
+<td>22</td>
+<td>5 %</td>
+</tr>
+<tr>
+<td>17 Paper</td>
+<td>18</td>
+<td>4 %</td>
+</tr>
+<tr>
+<td>35 Energy</td>
+<td>17</td>
+<td>4 %</td>
+</tr>
+<tr>
+<td>20 Chemicals</td>
+<td>16</td>
+<td>4 %</td>
+</tr>
+</tbody>
+</table>
+<p>By product, minerals (CN 25, 44 %), stone products (CN 68, 12 %),
+fuels (CN 27, 12 %) and wood (CN 44, 9 %) lead.</p>
+<hr />
+<h2 id="symbiosis-potential-at-three-scales">5. Symbiosis potential at
+three scales</h2>
+<p><strong>Table 1. Waste reused and imports replaced, by scale (mass
+regime; value from the value regime)</strong></p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr>
+<th>Scale</th>
+<th>MAESTRI: kt</th>
+<th>MAESTRI: % of imports (t)</th>
+<th>MAESTRI: MSEK</th>
+<th>MAESTRI + W2RKG: kt</th>
+<th>MAESTRI + W2RKG: % of imports (t)</th>
+<th>MAESTRI + W2RKG: MSEK</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Region, LP optimum</td>
+<td>19.8</td>
+<td>4.3</td>
+<td>58</td>
+<td>202.7</td>
+<td>43.9</td>
+<td>463</td>
+</tr>
+<tr>
+<td>Kommun, within kommun only</td>
+<td>6.1</td>
+<td>1.3</td>
+<td>39</td>
+<td>128.5</td>
+<td>27.9</td>
+<td>284</td>
+</tr>
+<tr>
+<td>Kommun, within + between</td>
+<td>19.5</td>
+<td>4.2</td>
+<td>58</td>
+<td>202.1</td>
+<td>43.8</td>
+<td>462</td>
+</tr>
+<tr>
+<td>Firms, bottom-up</td>
+<td>12.7</td>
+<td>3.3</td>
+<td>41</td>
+<td>103.0</td>
+<td>26.7</td>
+<td>388</td>
+</tr>
+<tr>
+<td>Firms, top-down</td>
+<td>15.7</td>
+<td>3.4</td>
+<td>48</td>
+<td>121.0</td>
+<td>26.4</td>
+<td>440</td>
+</tr>
+</tbody>
+</table>
+<p>Share of the region’s waste reused at the regional optimum: 2.4 %
+(MAESTRI) and 25.0 % (MAESTRI + W2RKG).</p>
+<p>Readings:</p>
+<ul>
+<li><strong>Local first, then regional.</strong>
+<ul>
+<li>Exchanges inside a kommun capture only 31 % (MAESTRI) or 64 %
+(W2RKG) of the tonnes the region could reuse.</li>
+<li>In value the local share is higher: 67 % and 61 %. High-value
+streams such as food residues for feed, paper and pulp often find users
+in the same kommun. Bulky minerals have to travel.</li>
+<li>Allowing exchange between kommuner brings the result to within 0–3 %
+of the regional optimum.</li>
+</ul></li>
+<li><strong>Firm level is lower</strong> because it uses only registry
+firms. The registry covers 84 % of workers in sectors A–E but has no
+construction firms, and no firm may supply itself. The top-down basis
+restores the kommun totals of waste and demand.</li>
+</ul>
+<hr />
+<h2 id="what-is-replaced-and-which-waste-is-used">6. What is replaced
+and which waste is used</h2>
+<p><strong>Table 2. Products replaced, kommun two-stage
+allocation</strong></p>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th>Product (CN4)</th>
+<th>MAESTRI kt</th>
+<th>MAESTRI MSEK</th>
+<th>MAESTRI + W2RKG kt</th>
+<th>MAESTRI + W2RKG MSEK</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2517 Crushed stone, gravel</td>
+<td>9.1</td>
+<td>2.7</td>
+<td>91.2</td>
+<td>27.3</td>
+</tr>
+<tr>
+<td>2701 Coal (kiln fuel)</td>
+<td>—</td>
+<td>—</td>
+<td>33.9</td>
+<td>91.7</td>
+</tr>
+<tr>
+<td>2505 Natural sand</td>
+<td>—</td>
+<td>—</td>
+<td>16.8</td>
+<td>2.3</td>
+</tr>
+<tr>
+<td>4401 Fuel wood, chips</td>
+<td>3.2</td>
+<td>0.6</td>
+<td>16.2</td>
+<td>3.3</td>
+</tr>
+<tr>
+<td>4707 Recovered paper</td>
+<td>—</td>
+<td>—</td>
+<td>9.1</td>
+<td>26.5</td>
+</tr>
+<tr>
+<td>4705 Wood pulp</td>
+<td>2.9</td>
+<td>14.6</td>
+<td>8.8</td>
+<td>45.1</td>
+</tr>
+<tr>
+<td>2309 Animal feed preparations</td>
+<td>1.7</td>
+<td>34.9</td>
+<td>1.7</td>
+<td>34.9</td>
+</tr>
+<tr>
+<td>1108 Starches</td>
+<td>—</td>
+<td>—</td>
+<td>2.4</td>
+<td>32.4</td>
+</tr>
+<tr>
+<td>2106 Food preparations</td>
+<td>—</td>
+<td>—</td>
+<td>2.1</td>
+<td>97.9</td>
+</tr>
+<tr>
+<td>3502 Albumins</td>
+<td>—</td>
+<td>—</td>
+<td>2.0</td>
+<td>18.2</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Table 3. Waste streams used (MAESTRI + W2RKG, kommun
+two-stage)</strong></p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Waste (LoW)</th>
+<th>Used, kt</th>
+<th>Available, kt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>17 01 07 concrete, bricks, tiles (mixed)</td>
+<td>48.1</td>
+<td>67.6</td>
+</tr>
+<tr>
+<td>19 12 12 mixed residues from mechanical waste treatment</td>
+<td>25.5</td>
+<td>75.7</td>
+</tr>
+<tr>
+<td>17 09 04 mixed construction and demolition waste</td>
+<td>16.6</td>
+<td>33.1</td>
+</tr>
+<tr>
+<td>17 05 04 soil and stones</td>
+<td>13.7</td>
+<td>35.1</td>
+</tr>
+<tr>
+<td>03 01 05 sawdust, shavings</td>
+<td>13.6</td>
+<td>13.6</td>
+</tr>
+<tr>
+<td>17 03 02 bituminous mixtures (asphalt)</td>
+<td>10.3</td>
+<td>23.8</td>
+</tr>
+<tr>
+<td>12 01 01 ferrous turnings</td>
+<td>9.6</td>
+<td>69.3</td>
+</tr>
+<tr>
+<td>19 08 05 sewage sludge</td>
+<td>7.9</td>
+<td>38.9</td>
+</tr>
+<tr>
+<td>20 01 01 paper and cardboard</td>
+<td>7.6</td>
+<td>20.6</td>
+</tr>
+</tbody>
+</table>
+<p>In tonnes the region is a <strong>minerals system</strong>:
+construction and demolition waste replacing crushed stone, sand and
+gravel, and residues replacing kiln fuel at the cement plant. In value,
+<strong>food, feed, fibre and pulp</strong> matter most. With documented
+exchanges only, food residues to animal feed (35 MSEK) and wood to pulp
+(15 MSEK) carry most of the value.</p>
+<p><strong>Why waste stays unused</strong> (regional allocation):</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Status</th>
+<th>MAESTRI kt</th>
+<th>MAESTRI + W2RKG kt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>No compatible product known</td>
+<td>661</td>
+<td>205</td>
+</tr>
+<tr>
+<td>Compatible product exists but is not imported in the region</td>
+<td>94</td>
+<td>192</td>
+</tr>
+<tr>
+<td>Partly used (demand met)</td>
+<td>35 left</td>
+<td>213 left</td>
+</tr>
+<tr>
+<td>Fully used</td>
+<td>16</td>
+<td>95</td>
+</tr>
+</tbody>
+</table>
+<p>Waste whose compatible products are not imported in Skaraborg could
+be marketed outside the region, or to firms that buy these products from
+Swedish suppliers. Those purchases are not visible in import data (see
+§8).</p>
+<hr />
+<h2 id="kommuner-who-supplies-whom">7. Kommuner: who supplies whom</h2>
+<p><strong>Table 4. Kommun results, MAESTRI + W2RKG, two-stage
+allocation (mass)</strong></p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Kommun</th>
+<th>Waste, kt</th>
+<th>Waste reused, %</th>
+<th>Net supplier (+) / receiver (−), kt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Skövde</td>
+<td>149.0</td>
+<td>56.9</td>
+<td>−3.9</td>
+</tr>
+<tr>
+<td>Lidköping</td>
+<td>115.2</td>
+<td>24.0</td>
+<td>+27.1</td>
+</tr>
+<tr>
+<td>Mariestad</td>
+<td>95.3</td>
+<td>17.5</td>
+<td>−13.0</td>
+</tr>
+<tr>
+<td>Falköping</td>
+<td>91.3</td>
+<td>14.3</td>
+<td>+10.5</td>
+</tr>
+<tr>
+<td>Götene</td>
+<td>77.4</td>
+<td>23.5</td>
+<td>−36.6</td>
+</tr>
+<tr>
+<td>Vara</td>
+<td>62.9</td>
+<td>27.7</td>
+<td>+0.2</td>
+</tr>
+<tr>
+<td>Skara</td>
+<td>53.0</td>
+<td>7.7</td>
+<td>+3.8</td>
+</tr>
+<tr>
+<td>Töreboda</td>
+<td>27.8</td>
+<td>16.7</td>
+<td>+1.2</td>
+</tr>
+<tr>
+<td>Tidaholm</td>
+<td>26.5</td>
+<td>13.9</td>
+<td>+1.0</td>
+</tr>
+<tr>
+<td>Tibro</td>
+<td>23.3</td>
+<td>17.3</td>
+<td>+2.6</td>
+</tr>
+<tr>
+<td>Gullspång</td>
+<td>22.3</td>
+<td>4.6</td>
+<td>+1.0</td>
+</tr>
+<tr>
+<td>Hjo</td>
+<td>20.2</td>
+<td>9.0</td>
+<td>+0.9</td>
+</tr>
+<tr>
+<td>Grästorp</td>
+<td>15.6</td>
+<td>12.4</td>
+<td>+1.9</td>
+</tr>
+<tr>
+<td>Karlsborg</td>
+<td>15.4</td>
+<td>7.4</td>
+<td>+1.1</td>
+</tr>
+<tr>
+<td>Essunga</td>
+<td>14.7</td>
+<td>13.8</td>
+<td>+2.0</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Receivers.</strong> Götene, Mariestad and Skövde receive
+more than they send. Their mineral, paper and cement industries draw
+by-products from across the region.</li>
+<li><strong>Suppliers.</strong> Lidköping, Falköping and Skara are the
+largest net suppliers.</li>
+<li><strong>Small kommuner.</strong> For the small kommuner, symbiosis
+is almost entirely an export opportunity. They have little local demand
+to substitute, so regional coordination matters most for them.</li>
+<li><strong>Self-sufficiency.</strong> Only Skövde reuses more than half
+of its own waste within its own borders. In most kommuner, local reuse
+is below 10 % of the waste.</li>
+</ul>
+<p>With documented exchanges only, the same pattern holds at a much
+smaller scale (19.5 kt). Mariestad, Götene and Skövde are the receivers;
+Lidköping and Falköping supply.</p>
+<hr />
+<h2 id="against-total-regional-material-use">8. Against total regional
+material use</h2>
+<p>Imports are only 1.5 of the 8.6 Mt the region uses. The rest is
+domestic extraction and freight from the rest of Sweden. Allocating
+waste against <strong>apparent use</strong> instead of imports
+gives:</p>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th>Matching</th>
+<th>Waste reused</th>
+<th>Share of regional use (t)</th>
+<th>Share of regional use (value)</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MAESTRI</td>
+<td>31 kt</td>
+<td>0.4 %</td>
+<td>0.3 %</td>
+<td>50 MSEK</td>
+</tr>
+<tr>
+<td>MAESTRI + W2RKG</td>
+<td>305 kt</td>
+<td>3.8 %</td>
+<td>3.8 %</td>
+<td>630 MSEK</td>
+</tr>
+<tr>
+<td>MAESTRI + W2RKG, without quarry waste</td>
+<td>296 kt</td>
+<td>3.7 %</td>
+<td>3.7 %</td>
+<td>625 MSEK</td>
+</tr>
+</tbody>
+</table>
+<p>Measured against total use, by-products could cover a few percent of
+Skaraborg’s material needs. The volume is dominated by recycled
+aggregates replacing locally quarried stone.</p>
+<hr />
+<h2 id="skaraborg-in-västra-götaland-county">9. Skaraborg in Västra
+Götaland County</h2>
+<p>Skaraborg is one of the four kommunalförbund of Västra Götaland
+County. The others are Göteborgsregionen, Fyrbodal and Sjuhärad, and
+together the four cover the county’s 49 kommuner, each counted once.
+Running the same method on the whole county shows what Skaraborg gains
+or loses by exchanging by-products with the rest of the county. Run on
+its own, Skaraborg reproduces exactly the results in this report.</p>
+<p><strong>Table 5. Skaraborg alone and as part of the county (kommun
+two-stage, mass)</strong></p>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th></th>
+<th>MAESTRI: alone</th>
+<th>MAESTRI: in county</th>
+<th>MAESTRI + W2RKG: alone</th>
+<th>MAESTRI + W2RKG: in county</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Skaraborg waste used within Skaraborg, kt</td>
+<td>19.5</td>
+<td>14.8</td>
+<td>202.1</td>
+<td>130.6</td>
+</tr>
+<tr>
+<td>Skaraborg waste sent to the rest of the county, kt</td>
+<td>—</td>
+<td>3.2</td>
+<td>—</td>
+<td>7.0</td>
+</tr>
+<tr>
+<td>Waste from the rest of the county used in Skaraborg, kt</td>
+<td>—</td>
+<td>30.8</td>
+<td>—</td>
+<td>78.3</td>
+</tr>
+<tr>
+<td>Share of Skaraborg’s waste reused</td>
+<td>2.4 %</td>
+<td>2.2 %</td>
+<td>24.9 %</td>
+<td>17.0 %</td>
+</tr>
+<tr>
+<td>Share of Skaraborg’s imported inputs replaced (t)</td>
+<td>4.2 %</td>
+<td>9.9 %</td>
+<td>43.8 %</td>
+<td>45.3 %</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Inside the county, Skaraborg is a net receiver of
+by-products.</strong> Larger waste streams from Göteborgsregionen and
+Fyrbodal reach Skaraborg’s mineral, paper and food industries. More of
+Skaraborg’s demand is met, but less of its own waste is used, because
+some of it is displaced by waste from elsewhere.</li>
+<li><strong>Skaraborg matches its waste to local demand better than any
+other sub-region.</strong> With the knowledge graph it reuses 25 % of
+its own waste on its own, against 3–6 % in the other sub-regions. That
+alone is 46 % of the whole county’s potential.</li>
+<li><strong>For the county as a whole, borders cost a lot:</strong>
+<ul>
+<li>kommuner each on their own realise 24 % (MAESTRI) or 54 % (with
+W2RKG) of the county’s optimum</li>
+<li>the four kommunalförbund each on their own realise 58 % or 85 %</li>
+<li>exchange across the whole county is needed for the rest</li>
+</ul>
+County optimum: 141 kt (MAESTRI) or 440 kt (MAESTRI + W2RKG).</li>
+</ul>
+<p>Distances and transport costs are not yet part of the allocation.
+Exchanges across the county are longer (35–70 km on average at firm
+level, against 20–26 km within Skaraborg), so some of the county-wide
+gain may not pay for its transport, especially for low-value bulk
+minerals.</p>
+<hr />
+<h2 id="how-robust-are-the-results">10. How robust are the results?</h2>
+<p><strong>Table 6. Sensitivity, kommun two-stage allocation (mass
+regime)</strong></p>
+<p>Here MSEK is the value of the tonnes allocated in the mass regime. It
+is therefore lower than the value-regime figures in Table 1 (for example
+435 against 462 MSEK for MAESTRI + W2RKG), which come from an allocation
+that maximises value.</p>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Waste, kt</th>
+<th>Reused, kt</th>
+<th>% of imports (t)</th>
+<th>MSEK</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Baseline (MAESTRI)</td>
+<td>810</td>
+<td>19.5</td>
+<td>4.2</td>
+<td>58</td>
+</tr>
+<tr>
+<td>No plausibility exclusions</td>
+<td>810</td>
+<td>19.5</td>
+<td>4.2</td>
+<td>69</td>
+</tr>
+<tr>
+<td>Waste coefficients calibrated to 2022</td>
+<td>731</td>
+<td>18.7</td>
+<td>4.0</td>
+<td>55</td>
+</tr>
+<tr>
+<td>Quarry waste 5 t/worker</td>
+<td>800</td>
+<td>11.0</td>
+<td>2.4</td>
+<td>56</td>
+</tr>
+<tr>
+<td>Quarry waste 1,100 t/worker</td>
+<td>915</td>
+<td>101.6</td>
+<td>22.0</td>
+<td>83</td>
+</tr>
+<tr>
+<td>One mining coefficient for all of B (former method)</td>
+<td>2,007</td>
+<td>101.6</td>
+<td>22.0</td>
+<td>83</td>
+</tr>
+<tr>
+<td>Without mining and quarrying waste</td>
+<td>799</td>
+<td>10.6</td>
+<td>2.3</td>
+<td>56</td>
+</tr>
+<tr>
+<td>W2RKG only, reviewed pairs</td>
+<td>810</td>
+<td>192.7</td>
+<td>41.8</td>
+<td>382</td>
+</tr>
+<tr>
+<td>W2RKG reviewed, physical substitutions only</td>
+<td>810</td>
+<td>172.4</td>
+<td>37.4</td>
+<td>186</td>
+</tr>
+<tr>
+<td>W2RKG, all pairs (unreviewed)</td>
+<td>810</td>
+<td>354.6</td>
+<td>76.9</td>
+<td>1,528</td>
+</tr>
+<tr>
+<td><strong>MAESTRI + W2RKG reviewed</strong></td>
+<td>810</td>
+<td><strong>202.1</strong></td>
+<td><strong>43.8</strong></td>
+<td><strong>435</strong></td>
+</tr>
+<tr>
+<td>MAESTRI + W2RKG, without mining waste</td>
+<td>799</td>
+<td>202.1</td>
+<td>43.8</td>
+<td>435</td>
+</tr>
+<tr>
+<td>Without mineral fuels in demand</td>
+<td>810</td>
+<td>19.5</td>
+<td>4.8</td>
+<td>58</td>
+</tr>
+</tbody>
+</table>
+<p>The uncertainties, in order of size:</p>
+<ol type="1">
+<li><strong>Matching knowledge.</strong> Results range from 20 to 350
+kt, depending on which waste-to-product pairs are accepted.</li>
+<li><strong>Quarry waste per worker.</strong> Swedish statistics do not
+separate quarries from metal mines. The plausible range is 5–1,100 t per
+worker, and the top of that range adds about 80 kt of mineral waste with
+a market.</li>
+<li><strong>Plausibility exclusions.</strong> These change value more
+than tonnes.</li>
+<li><strong>Waste model and allocation rule.</strong> Both are small
+effects.</li>
+</ol>
+<h3 id="validation">Validation</h3>
+<ul>
+<li><strong>National totals.</strong> Scaled back to Sweden, the waste
+model reproduces Eurostat totals:
+<ul>
+<li>agriculture 0.69×</li>
+<li>mining 0.89×</li>
+<li>manufacturing 1.56×</li>
+<li>energy 0.89×</li>
+<li>water and waste 0.86×</li>
+<li>construction 1.13×</li>
+</ul></li>
+<li><strong>Quarries.</strong> Modelled quarry waste is 0.3 % of the
+quarry output implied by SGU statistics, consistent with quarries
+reporting little unsold residue. The former single mining coefficient
+implied 30 %, which was implausible.</li>
+<li><strong>Prices.</strong> Regional import prices are close to
+Eurostat unit values for the same codes: plastics 0.95×, glass 0.99×,
+recovered paper 1.39×.</li>
+<li><strong>Totals add up.</strong> Summing kommun results reproduces
+the regional totals exactly. The top-down firm basis reproduces the
+kommun totals.</li>
+</ul>
+<hr />
+<h2 id="limitations">11. Limitations</h2>
+<ul>
+<li><strong>Demand covers imports only.</strong> Materials bought from
+Swedish suppliers appear only in the material balance (§8), which has no
+buyer detail.</li>
+<li><strong>One tonne for one tonne.</strong> Substitution assumes 1 t
+of waste replaces 1 t of product. For conversion routes, such as
+residues to food ingredients, this overstates value.</li>
+<li><strong>No transport, processing or quality costs.</strong> All
+values are the gross value of replaced imports.</li>
+<li><strong>Waste is modelled from employment.</strong> Differences
+between kommuner reflect industry mix, not the performance of individual
+plants.</li>
+<li><strong>No construction firms in the firm registry.</strong>
+Construction waste enters the firm level only on the top-down
+basis.</li>
+<li><strong>Planned change at the largest buyer.</strong> The Skövde
+cement plant plans to stop clinker production from 2027, which would
+reduce the largest single demand for mineral and fuel substitutes.</li>
+</ul>
+<hr />
+<h2 id="reproducibility-and-data-availability">12. Reproducibility and
+data availability</h2>
+<p>The analysis is a scripted R pipeline. The same code runs for
+Skaraborg, each of the other kommunalförbund and the whole county, by
+changing one setting (the study area). Microdata from SCB are
+confidential and are not shared. The interactive web report that
+accompanies this document shows aggregated results only:</p>
+<ul>
+<li>industries with fewer than three organisations in a kommun are
+merged</li>
+<li>imported products with fewer than three importers in a cell are
+merged</li>
+<li>no firm-level locations or links are published</li>
+</ul>
+<p><strong>Suggested citation.</strong> Cohen, J. (2026). <em>Regional
+industrial symbiosis in Skaraborg: waste as a substitute for imported
+inputs, 2022.</em> Working report.</p>
+<p><strong>References</strong></p>
+<ul>
+<li>Patricio, J., et al. (2022). MAESTRI database of industrial
+symbiosis cases.</li>
+<li>Zhao, et al. (2025). Waste-to-resource knowledge graph (W2RKG).
+<em>Nature Communications</em>. doi:10.1038/s41467-025-66599-7.</li>
+<li>SCB (2022). Workplace register (FDB); foreign trade microdata.</li>
+<li>Eurostat. <code>env_wasgen</code>; economy-wide material flow
+accounts.</li>
+<li>Trafikanalys (2021–2023). Lorry transport survey.</li>
+<li>SGU (2023). Grus, sand och krossberg 2022.</li>
+</ul>
+</body>
+</html>
