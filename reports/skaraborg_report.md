@@ -519,11 +519,11 @@ The analysis is a scripted R pipeline. The same code runs for Skaraborg, each
 of the other kommunalförbund and the whole county, by changing one setting
 (the study area). Microdata from SCB are confidential and are not shared.
 The [interactive web report](https://makijota.github.io/skaraborg-symbiosis/skaraborg/)
-that accompanies this document shows aggregated results only:
+that accompanies this document shows the model results, not the microdata:
 
-- industries with fewer than three organisations in a kommun are merged
-- imported products with fewer than three importers in a cell are merged
-- no firm names are published; firms appear only as anonymous points
+- results by kommun, industry (NACE4), waste (LoW) and product (CN4)
+- firm-level results without names: firms are anonymous points placed on a
+  1 km grid, and workers are given only as a size class
 
 **Suggested citation.** Cohen, J. (2026). *Regional industrial symbiosis in
 Skaraborg: waste as a substitute for imported inputs, 2022.* Working report.

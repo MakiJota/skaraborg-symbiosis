@@ -599,7 +599,7 @@
     add(page, h("h2", { text: S.lang === "sv" ? "Ladda ner data" : "Download data" }));
     const files = ["meta.json", "region.json", "metabolism.json", "kpis.json", "firms.json", "directory.json",
       ...R.SCENARIOS.map(s => `flows_${s}.json`),
-      ...(window.RIS_CONFIG && window.RIS_CONFIG.public ? [] : ["sites.json", ...R.SCENARIOS.map(s => `links_${s}.json`)]),
+      ...(window.RIS_CONFIG && window.RIS_CONFIG.disclosure ? [] : ["sites.json", ...R.SCENARIOS.map(s => `links_${s}.json`)]),
       "kommuner.geojson", "context.md"];
     add(page, h("ul", { class: "prose" }, files.map(f => h("li", {}, h("a", { href: "data/" + f, download: f, text: f })))));
     add(page, h("p", { class: "small muted", text: `${S.lang === "sv" ? "Data genererade" : "Data generated"} ${D.meta.generated}` }));

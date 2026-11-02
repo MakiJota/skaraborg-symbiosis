@@ -24,7 +24,7 @@
     "wg.cd": "Construction & demolition", "wg.treat": "Waste-treatment residues", "wg.wood": "Wood & paper", "wg.food": "Food & agriculture",
     "wg.metal": "Metals", "wg.ash": "Ash & thermal residues", "wg.mun": "Packaging & municipal", "wg.other": "Other waste",
     "ex.sub.k": "Between kommuner", "ex.sub.k.p": "The kommun layer: waste exchanged between kommuner in the kommun allocation. Each line runs from the giving to the receiving kommun and bends to the right of its direction; the circle at each kommun shows the exchange that stays inside it. Click a line for the main wastes and products.",
-    "ex.sub.f": "Firm to firm", "ex.sub.f.p": "The same exchanges at firm level, from the firm allocation. Lines join places, not individual firms (see the note below the map).",
+    "ex.sub.f": "Firm to firm", "ex.sub.f.p": "The same exchanges at firm level, from the firm allocation. Each line joins a firm that supplies waste with a firm that uses it; firms are anonymous.",
     "ex.k.kpairs": "Kommun pairs", "ex.k.kpairs.s": "with exchange between them", "ex.k.between": "Between kommuner", "ex.k.local": "Within kommuner",
     "ex.k.hub": "Largest receiver", "ex.k.hub.s": "net received",
     "ex.legend.sites": "Firm colour: sector · size: tonnes",
@@ -65,7 +65,7 @@
     "wg.cd": "Bygg- och rivningsavfall", "wg.treat": "Restprodukter från avfallsbehandling", "wg.wood": "Trä och papper", "wg.food": "Livsmedel och jordbruk",
     "wg.metal": "Metaller", "wg.ash": "Aska och termiska rester", "wg.mun": "Förpackningar och kommunalt avfall", "wg.other": "Övrigt avfall",
     "ex.sub.k": "Mellan kommuner", "ex.sub.k.p": "Kommunlagret: avfall som utbyts mellan kommuner i kommunallokeringen. Varje linje går från givande till mottagande kommun och böjer åt höger i färdriktningen; cirkeln vid varje kommun visar utbytet som stannar inom kommunen. Klicka på en linje för de viktigaste avfallen och produkterna.",
-    "ex.sub.f": "Företag till företag", "ex.sub.f.p": "Samma utbyten på företagsnivå, från företagsallokeringen. Linjerna går mellan platser, inte enskilda företag (se noten under kartan).",
+    "ex.sub.f": "Företag till företag", "ex.sub.f.p": "Samma utbyten på företagsnivå, från företagsallokeringen. Varje linje förbinder ett företag som lämnar avfall med ett som använder det; företagen är anonyma.",
     "ex.k.kpairs": "Kommunpar", "ex.k.kpairs.s": "med utbyte sinsemellan", "ex.k.between": "Mellan kommuner", "ex.k.local": "Inom kommuner",
     "ex.k.hub": "Största mottagare", "ex.k.hub.s": "netto mottaget",
     "ex.legend.sites": "Företagsfärg: sektor · storlek: ton",
@@ -88,9 +88,11 @@
     "col.node": "Nod", "col.indeg": "Tar emot från", "col.outdeg": "Ger till", "col.btw": "Mellanliggande", "col.km_mean": "km"
   });
 
-  if ((window.RIS_CONFIG || {}).public) {   // public site: places, not firms (see "ex.places")
+  if ((window.RIS_CONFIG || {}).disclosure) {   // disclosure-controlled build: places, not firms (see "ex.places")
     I18N.en["ex.lead"] = "The exchanges the model finds, on two maps: first between kommuner, then firm to firm (drawn between places). Zoom and pan, click a line for details, and use the filters at the top to focus on a waste, a product, an industry or a kommun.";
     I18N.sv["ex.lead"] = "De utbyten som modellen hittar, på två kartor: först mellan kommuner, sedan mellan företag (ritade mellan platser). Zooma och panorera, klicka på en linje för detaljer, och använd filtren överst för att fokusera på ett avfall, en produkt, en bransch eller en kommun.";
+    I18N.en["ex.sub.f.p"] = "The same exchanges at firm level, from the firm allocation. Lines join places, not individual firms (see the note below the map).";
+    I18N.sv["ex.sub.f.p"] = "Samma utbyten på företagsnivå, från företagsallokeringen. Linjerna går mellan platser, inte enskilda företag (se noten under kartan).";
     I18N.en["nw.lead"] = I18N.en["nw.lead"].replace("Nodes are firms, ", "Nodes are ");
     I18N.sv["nw.lead"] = I18N.sv["nw.lead"].replace("Noderna är företag, ", "Noderna är ");
   }
@@ -100,8 +102,8 @@
               res: "both", scope: "practice", left: false, view: null,
               level: "kn", layout: "force", min: 1 };
   const setE = patch => { Object.assign(E, patch); R.render(); };
-  // Public site: firms are pooled into places (dashboard/disclosure.R); lines only, no points.
-  const PUB = !!(window.RIS_CONFIG || {}).public;
+  // Disclosure-controlled build: firms pooled into places (dashboard/disclosure.R); lines only, no points.
+  const PUB = !!(window.RIS_CONFIG || {}).disclosure;
   if (PUB) { E.mode = "flows"; E.color = "waste"; if (E.level === "firm") E.level = "kn"; }
   // deep links: #/explorer?mode=res or #/network?level=k&layout=geo
   (() => {

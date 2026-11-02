@@ -31,14 +31,11 @@ Waste is then allocated to compatible demand at nested scales:
 ## Data protection
 
 The underlying microdata from Statistics Sweden are confidential and are not
-in this repository. The published data are aggregated:
+in this repository. What is published are model results:
 
-- an industry with fewer than three organisations in a kommun is merged into
-  its NACE2 group, or into "other industries"
-- an imported product with fewer than three importers in a cell is merged
-  into its CN chapter, or into "other goods"
-- no firm names or positions are included: firm-level exchanges are shown
-  between places of at least three firms (5 km squares, or the kommun centre)
+- results by kommun, industry (NACE4), waste (LoW) and product (CN4)
+- firm-level results without names: firms are anonymous points placed on a
+  1 km grid, and workers are given only as a size class
 
 ## Viewing
 
