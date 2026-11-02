@@ -19,6 +19,14 @@
     "ex.k.links": "Links", "ex.k.dist": "Mean distance", "ex.k.firms": "Firms involved", "ex.k.places": "Places involved",
     "ex.places": "To protect individual firms, the lines join places, not firms. Firms are pooled into 5 km squares that hold at least three firms; firms in emptier squares join a point at the centre of their kommun. An industry with fewer than three firms in a place is shown as “other industries”, and no firm positions are shown.",
     "ex.legend.lines": "Line colour: product group · width: tonnes",
+    "ex.color.waste": "Waste", "ex.legend.waste": "Line colour: main waste · width: tonnes", "ex.legend.giver": "Line colour: giving sector · width: tonnes",
+    "ex.legend.kommun": "Line: main waste, width = tonnes · circle: exchange within the kommun", "ex.legend.netgive": "Net supplier", "ex.legend.nettake": "Net receiver",
+    "wg.cd": "Construction & demolition", "wg.treat": "Waste-treatment residues", "wg.wood": "Wood & paper", "wg.food": "Food & agriculture",
+    "wg.metal": "Metals", "wg.ash": "Ash & thermal residues", "wg.mun": "Packaging & municipal", "wg.other": "Other waste",
+    "ex.sub.k": "Between kommuner", "ex.sub.k.p": "The kommun layer: waste exchanged between kommuner in the kommun allocation. Each line runs from the giving to the receiving kommun and bends to the right of its direction; the circle at each kommun shows the exchange that stays inside it. Click a line for the main wastes and products.",
+    "ex.sub.f": "Firm to firm", "ex.sub.f.p": "The same exchanges at firm level, from the firm allocation. Lines join places, not individual firms (see the note below the map).",
+    "ex.k.kpairs": "Kommun pairs", "ex.k.kpairs.s": "with exchange between them", "ex.k.between": "Between kommuner", "ex.k.local": "Within kommuner",
+    "ex.k.hub": "Largest receiver", "ex.k.hub.s": "net received",
     "ex.legend.sites": "Firm colour: sector · size: tonnes",
     "ex.legend.give": "Waste generated", "ex.legend.take": "Inputs needed",
     "ex.giver": "Giving firm", "ex.taker": "Taking firm",
@@ -52,6 +60,14 @@
     "ex.k.links": "Länkar", "ex.k.dist": "Medelavstånd", "ex.k.firms": "Berörda företag", "ex.k.places": "Berörda platser",
     "ex.places": "För att skydda enskilda företag går linjerna mellan platser, inte företag. Företagen slås ihop i rutor om 5 km med minst tre företag; företag i glesare rutor förs till en punkt i kommunens mitt. En bransch med färre än tre företag på en plats visas som “övriga branscher”, och inga företagslägen visas.",
     "ex.legend.lines": "Linjefärg: produktgrupp · bredd: ton",
+    "ex.color.waste": "Avfall", "ex.legend.waste": "Linjefärg: huvudsakligt avfall · bredd: ton", "ex.legend.giver": "Linjefärg: givande sektor · bredd: ton",
+    "ex.legend.kommun": "Linje: huvudsakligt avfall, bredd = ton · cirkel: utbyte inom kommunen", "ex.legend.netgive": "Nettogivare", "ex.legend.nettake": "Nettomottagare",
+    "wg.cd": "Bygg- och rivningsavfall", "wg.treat": "Restprodukter från avfallsbehandling", "wg.wood": "Trä och papper", "wg.food": "Livsmedel och jordbruk",
+    "wg.metal": "Metaller", "wg.ash": "Aska och termiska rester", "wg.mun": "Förpackningar och kommunalt avfall", "wg.other": "Övrigt avfall",
+    "ex.sub.k": "Mellan kommuner", "ex.sub.k.p": "Kommunlagret: avfall som utbyts mellan kommuner i kommunallokeringen. Varje linje går från givande till mottagande kommun och böjer åt höger i färdriktningen; cirkeln vid varje kommun visar utbytet som stannar inom kommunen. Klicka på en linje för de viktigaste avfallen och produkterna.",
+    "ex.sub.f": "Företag till företag", "ex.sub.f.p": "Samma utbyten på företagsnivå, från företagsallokeringen. Linjerna går mellan platser, inte enskilda företag (se noten under kartan).",
+    "ex.k.kpairs": "Kommunpar", "ex.k.kpairs.s": "med utbyte sinsemellan", "ex.k.between": "Mellan kommuner", "ex.k.local": "Inom kommuner",
+    "ex.k.hub": "Största mottagare", "ex.k.hub.s": "netto mottaget",
     "ex.legend.sites": "Företagsfärg: sektor · storlek: ton",
     "ex.legend.give": "Avfall som uppstår", "ex.legend.take": "Insatsvaror som behövs",
     "ex.giver": "Givande företag", "ex.taker": "Mottagande företag",
@@ -73,8 +89,8 @@
   });
 
   if ((window.RIS_CONFIG || {}).public) {   // public site: places, not firms (see "ex.places")
-    I18N.en["ex.lead"] = "The exchanges the model finds between firms, drawn as lines between places on the map. Zoom and pan, click a line for details, and use the filters to focus on a waste, a product, an industry or a distance.";
-    I18N.sv["ex.lead"] = "De utbyten mellan företag som modellen hittar, ritade som linjer mellan platser på kartan. Zooma och panorera, klicka på en linje för detaljer, och använd filtren för att fokusera på ett avfall, en produkt, en bransch eller ett avstånd.";
+    I18N.en["ex.lead"] = "The exchanges the model finds, on two maps: first between kommuner, then firm to firm (drawn between places). Zoom and pan, click a line for details, and use the filters at the top to focus on a waste, a product, an industry or a kommun.";
+    I18N.sv["ex.lead"] = "De utbyten som modellen hittar, på två kartor: först mellan kommuner, sedan mellan företag (ritade mellan platser). Zooma och panorera, klicka på en linje för detaljer, och använd filtren överst för att fokusera på ett avfall, en produkt, en bransch eller en kommun.";
     I18N.en["nw.lead"] = I18N.en["nw.lead"].replace("Nodes are firms, ", "Nodes are ");
     I18N.sv["nw.lead"] = I18N.sv["nw.lead"].replace("Noderna är företag, ", "Noderna är ");
   }
@@ -86,7 +102,7 @@
   const setE = patch => { Object.assign(E, patch); R.render(); };
   // Public site: firms are pooled into places (dashboard/disclosure.R); lines only, no points.
   const PUB = !!(window.RIS_CONFIG || {}).public;
-  if (PUB) { E.mode = "flows"; if (E.level === "firm") E.level = "kn"; }
+  if (PUB) { E.mode = "flows"; E.color = "waste"; if (E.level === "firm") E.level = "kn"; }
   // deep links: #/explorer?mode=res or #/network?level=k&layout=geo
   (() => {
     const q = new URLSearchParams((location.hash.split("?")[1]) || "");
@@ -137,6 +153,16 @@
     return "other";
   };
   const groupColor = g => g === "other" ? cssv("--other") : R.palette()[GROUPS.indexOf(g)];
+  // waste groups by List of Waste chapter: always published in full, so the
+  // public site colours by waste (products are mostly merged into "other goods")
+  const WGROUPS = ["cd", "treat", "wood", "food", "metal", "ash", "mun", "other"];
+  const wgroupOf = low => {
+    const c = (low || "").slice(0, 2);
+    return c === "17" || c === "01" ? "cd" : c === "19" ? "treat" : c === "03" ? "wood" : c === "02" ? "food"
+      : c === "12" || c === "16" ? "metal" : c === "10" ? "ash" : c === "15" || c === "20" ? "mun" : "other";
+  };
+  const wgroupColor = g => g === "other" ? cssv("--other") : R.palette()[WGROUPS.indexOf(g)];
+  const top = m => [...m].sort((x, y) => y[1] - x[1])[0][0];
 
   // ---------- controls ----------
   const seg = (label, value, options, on) => h("div", { class: "filter" }, h("span", { text: label }),
@@ -177,18 +203,81 @@
     return div;
   }
 
+  // ---------- kommun layer: exchanges between kommun centres ----------
+  let kmap = null;
+  async function kommunLayer(page) {
+    if (kmap) { kmap.remove(); kmap = null; }
+    const fl = (await R.curFlows()).filter(f => R.flowPass(f, { exch: true }));
+    const at = Object.fromEntries(R.rows(D.meta.kommuner).map(k => [k.code, [k.lat, k.lon]]));
+    const pairs = new Map(), local = new Map(), out = new Map(), inn = new Map();
+    for (const f of fl) {
+      if (f.fk === f.tk) { local.set(f.fk, (local.get(f.fk) || 0) + f.t); continue; }
+      const k = f.fk + ">" + f.tk;
+      const p = pairs.get(k) || { a: f.fk, b: f.tk, t: 0, sek: 0, w: new Map(), items: [] };
+      p.t += f.t; p.sek += f.sek; p.items.push(f); p.w.set(wgroupOf(f.low), (p.w.get(wgroupOf(f.low)) || 0) + f.t);
+      pairs.set(k, p); out.set(f.fk, (out.get(f.fk) || 0) + f.t); inn.set(f.tk, (inn.get(f.tk) || 0) + f.t);
+    }
+    const P = [...pairs.values()].filter(p => at[p.a] && at[p.b]).sort((x, y) => x.t - y.t);
+    const tIn = sum(P, p => p.t), tLoc = sum([...local.values()], v => v);
+    const hub = [...inn].map(([k, v]) => [k, v - (out.get(k) || 0)]).sort((x, y) => y[1] - x[1])[0];
+    page.append(h("h2", { class: "ex-sub", text: t("ex.sub.k") }), h("p", { class: "muted", text: t("ex.sub.k.p") }));
+    page.append(h("div", { class: "grid g4" },
+      R.stat(t("ex.k.kpairs"), num(P.length), t("ex.k.kpairs.s")),
+      R.stat(t("ex.k.between"), fmtT(tIn), fmtSEK(sum(P, p => p.sek))),
+      R.stat(t("ex.k.local"), fmtT(tLoc), `${pct(tIn + tLoc ? 100 * tLoc / (tIn + tLoc) : 0, 0)} ${S.lang === "sv" ? "av allt utbyte" : "of all exchange"}`),
+      R.stat(t("ex.k.hub"), hub ? kName(hub[0]) : "–", hub ? `${fmtT(hub[1])} ${t("ex.k.hub.s")}` : "")));
+    const box = h("div", { style: "height:560px;border-radius:10px;border:1px solid var(--border);margin-top:16px;z-index:0;position:relative" });
+    page.append(box);
+    const dark = getComputedStyle(document.documentElement).colorScheme.includes("dark");
+    kmap = L.map(box, { preferCanvas: true, scrollWheelZoom: false, zoomControl: true });
+    L.tileLayer(`https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/${dark ? "World_Dark_Gray_Base" : "World_Light_Gray_Base"}/MapServer/tile/{z}/{y}/{x}`,
+      { attribution: "Tiles &copy; Esri — Esri, HERE, Garmin, &copy; OpenStreetMap contributors", maxZoom: 16 }).addTo(kmap);
+    const kl = L.geoJSON(await R.load("kommuner.geojson"), { style: () => ({ color: cssv("--axis"), weight: 1, opacity: 0.9, fillOpacity: 0 }) }).addTo(kmap);
+    kmap.fitBounds(kl.getBounds(), { padding: [20, 20] });
+    // each line bends to the right of its direction, so A→B and B→A stay apart
+    // (longitude is scaled by cos(latitude) so the bend is the same in every direction)
+    const tmax = Math.max(1, ...P.map(p => p.t)), cs = Math.cos(58.4 * Math.PI / 180);
+    for (const p of P) {
+      const [y0, x0] = at[p.a], [y1, x1] = at[p.b], dx = (x1 - x0) * cs, dy = y1 - y0;
+      const mid = [(y0 + y1) / 2 - 0.15 * dx, (x0 + x1) / 2 + 0.15 * dy / cs];
+      const ln = L.polyline([[y0, x0], mid, [y1, x1]], { color: wgroupColor(top(p.w)), weight: 1.5 + 11 * Math.sqrt(p.t / tmax), opacity: 0.8 });
+      ln.bindPopup(() => {
+        const items = p.items.sort((x, y) => y.t - x.t).slice(0, 6).map(i => `<li>${esc(lowName(i.low))} → <b>${esc(cnName(i.cn4))}</b>: ${esc(fmtT(i.t))}</li>`).join("");
+        return `<div style="font-size:12.5px;max-width:320px"><b style="font-size:13.5px">${esc(kName(p.a))} → ${esc(kName(p.b))}</b>
+          <div>${esc(fmtT(p.t))} · ${esc(fmtSEK(p.sek))}</div><ul style="margin:6px 0 0;padding-left:16px">${items}</ul></div>`;
+      }, { maxWidth: 340 });
+      ln.on("mouseover", () => ln.setStyle({ opacity: 1 })).on("mouseout", () => ln.setStyle({ opacity: 0.8 }));
+      ln.addTo(kmap);
+    }
+    // kommun centres: size = exchange within the kommun; filled = net receiver, ring = net supplier
+    // (neutral ink, so the circles never compete with the waste colours of the lines)
+    const codes = Object.keys(at), lmax = Math.max(1, ...codes.map(k => local.get(k) || 0));
+    for (const k of codes) {
+      const net = (out.get(k) || 0) - (inn.get(k) || 0), loc = local.get(k) || 0;
+      const ink = cssv("--text-primary");
+      L.circleMarker(at[k], { radius: 4 + 16 * Math.sqrt(loc / lmax), color: net >= 0 ? ink : cssv("--surface-1"), weight: net >= 0 ? 2.5 : 1.5,
+          fillColor: net >= 0 ? cssv("--surface-1") : ink, fillOpacity: net >= 0 ? 0.6 : 0.9 })
+        .bindTooltip(`<b>${esc(kName(k))}</b><br>${esc(t("ex.k.local"))}: ${esc(fmtT(loc))}<br>${esc(t("ex.sent"))}: ${esc(fmtT(out.get(k) || 0))}<br>${esc(t("ex.received"))}: ${esc(fmtT(inn.get(k) || 0))}`)
+        .addTo(kmap);
+    }
+    legend(kmap, [...WGROUPS.filter(g => P.some(p => top(p.w) === g)).map(g => [wgroupColor(g), t("wg." + g), "line"]),
+      [cssv("--text-primary"), t("ex.legend.nettake"), "dot"], [cssv("--text-primary"), t("ex.legend.netgive"), "ring"]], [t("ex.legend.kommun")]);
+  }
+
   // ---------- map explorer ----------
   let map = null;
   R.view("explorer", { group: "sym", prefix: "ex", after: "flows", async render(page) {
     if (map) { E.view = { c: map.getCenter(), z: map.getZoom() }; map.remove(); map = null; }
     R.header(page, "explorer");
+    await kommunLayer(page);
+    page.append(h("h2", { class: "ex-sub", text: t("ex.sub.f") }), h("p", { class: "muted", text: t("ex.sub.f.p") }));
     const st = await sites();
     page.append(bar(
       PUB ? null : seg(t("ex.mode"), E.mode, [["flows", t("ex.mode.flows")], ["res", t("ex.mode.res")]], v => setE({ mode: v })),
       seg(t("ex.basis"), E.basis, [["T", t("ex.basis.T")], ["B", t("ex.basis.B")]], v => setE({ basis: v })),
       E.mode === "flows" ? distance() : null,
       E.mode === "flows" ? sel(t("ex.size"), E.size, ["all", "50", "25", "10"].map(v => [v, t("ex.size." + v)]), v => setE({ size: v })) : null,
-      E.mode === "flows" ? seg(t("ex.color"), E.color, [["product", t("ex.color.product")], ["sector", t("ex.color.sector")]], v => setE({ color: v })) : null,
+      E.mode === "flows" ? seg(t("ex.color"), E.color, (PUB ? ["waste", "sector"] : ["waste", "product", "sector"]).map(v => [v, t("ex.color." + v)]), v => setE({ color: v })) : null,
       E.mode === "flows" ? check(t("ex.lines"), E.lines, v => setE({ lines: v })) : null,
       E.mode === "flows" && !PUB ? check(t("ex.allsites"), E.allSites, v => setE({ allSites: v })) : null,
       E.mode === "res" ? seg(t("ex.res.show"), E.res, ["both", "supply", "demand"].map(v => [v, t("ex.res." + v)]), v => setE({ res: v })) : null,
@@ -200,8 +289,9 @@
     const pairs = new Map();
     for (const l of L0) {
       const k = l.a + ">" + l.b;
-      const p = pairs.get(k) || { a: l.a, b: l.b, t: 0, sek: 0, km: l.km, items: [], g: new Map() };
+      const p = pairs.get(k) || { a: l.a, b: l.b, t: 0, sek: 0, km: l.km, items: [], g: new Map(), w: new Map() };
       p.t += l.t; p.sek += l.sek; p.items.push(l); p.g.set(groupOf(l.cn4), (p.g.get(groupOf(l.cn4)) || 0) + l.t);
+      p.w.set(wgroupOf(l.low), (p.w.get(wgroupOf(l.low)) || 0) + l.t);
       pairs.set(k, p);
     }
     let P = [...pairs.values()].sort((x, y) => y.t - x.t);
@@ -253,8 +343,8 @@
         const tmax = Math.max(1, ...P.map(p => p.t));
         for (const p of P.slice().reverse()) {
           const a = st.byId.get(p.a), b = st.byId.get(p.b);
-          const g = [...p.g].sort((x, y) => y[1] - x[1])[0][0];
-          const ln = L.polyline([[a.lat, a.lon], [b.lat, b.lon]], { color: E.color === "product" ? groupColor(g) : cssv("--axis"),
+          const col = E.color === "product" ? groupColor(top(p.g)) : E.color === "waste" ? wgroupColor(top(p.w)) : R.famColor(a.fam);
+          const ln = L.polyline([[a.lat, a.lon], [b.lat, b.lon]], { color: col,
             weight: 1 + 9 * Math.sqrt(p.t / tmax), opacity: 0.75 });
           ln.bindPopup(() => linkPopup(p), { maxWidth: 340 });
           ln.on("mouseover", () => ln.setStyle({ opacity: 1 })).on("mouseout", () => ln.setStyle({ opacity: 0.75 }));
@@ -274,10 +364,13 @@
             wastes: groupSum(kept.filter(l => l.a === i), l => l.low, l => l.t), ins: groupSum(kept.filter(l => l.b === i), l => l.cn4, l => l.t) }))
           .addTo(map);
       }
-      if (E.color === "product" || PUB)
+      if (E.color === "product")
         legend(map, GROUPS.filter(g => kept.some(l => groupOf(l.cn4) === g)).map(g => [groupColor(g), t("grp." + g), "line"]), [t("ex.legend.lines")]);
+      else if (E.color === "waste")
+        legend(map, WGROUPS.filter(g => kept.some(l => wgroupOf(l.low) === g)).map(g => [wgroupColor(g), t("wg." + g), "line"]), [t("ex.legend.waste")]);
       else
-        legend(map, R.famOrder.filter(f => [...involved].some(i => st.byId.get(i).fam === f)).map(f => [R.famColor(f), famName(f), "dot"]), [t("ex.legend.sites")]);
+        legend(map, R.famOrder.filter(f => [...involved].some(i => st.byId.get(i).fam === f)).map(f => [R.famColor(f), famName(f), PUB ? "line" : "dot"]),
+          [PUB ? t("ex.legend.giver") : t("ex.legend.sites")]);
     } else {
       // supply and demand per site (top-down firm estimates), filtered like the rest of the report
       const fs = await R.flows();
@@ -348,6 +441,7 @@
       titles.forEach(x => d.append(h("div", { style: `color:${cssv("--text-muted")};font-size:11px`, text: x })));
       for (const [color, label, kind] of items) d.append(h("div", {},
         h("i", { style: kind === "line" ? `display:inline-block;width:14px;height:3px;background:${color};margin-right:6px;vertical-align:3px`
+          : kind === "ring" ? `display:inline-block;width:7px;height:7px;border-radius:50%;border:2px solid ${color};margin-right:6px`
           : `display:inline-block;width:9px;height:9px;border-radius:50%;background:${color};margin-right:6px` }), label));
       L.DomEvent.disableClickPropagation(d);
       return d;

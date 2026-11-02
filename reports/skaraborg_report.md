@@ -19,8 +19,7 @@ It also places Skaraborg within Västra Götaland County, analysed with the
 same method.
 
 All figures are model estimates built from official statistics. They are not
-measured flows. The results are aggregated so that no figure describes a
-single firm.
+measured flows. No firm is named.
 
 ---
 
@@ -257,12 +256,14 @@ Readings:
   firm may supply itself. The top-down basis restores the kommun totals of
   waste and demand.
 
-Figure 6 maps the firm-level exchanges. To protect individual firms, the lines
-join *places*, not firms. Firms are pooled into 5 km squares that hold at least
-three firms, and firms in emptier squares are placed at the centre of their
-kommun. No firm positions or names are shown.
+Figure 6 maps the firm-level exchanges. Each line joins a firm that supplies
+waste with a firm that uses it; firms are anonymous. On the left the allocation
+moves the largest tonnes first (mass regime), on the right the most valuable
+inputs first (value regime). Most links cross a kommun border, and they
+converge on a few large users: the cement plant in Skövde, the paper mill in
+Mariestad and the mineral and food plants in Götene.
 
-![Figure 6. Firm-level exchanges (top-down basis), drawn between places of at least three firms.](figures/fig11_firm_map.png)
+![Figure 6. Firm-to-firm exchanges, top-down basis, MAESTRI + W2RKG. Blue lines stay within a kommun, orange lines cross a border; dot size is the tonnes a firm handles.](figures/fig12_firm_network.png)
 
 ---
 
@@ -344,7 +345,15 @@ suppliers. Those purchases are not visible in import data (see §8).
 
 ![Figure 8. Net waste sent (+) or received (−) by each kommun.](figures/fig07_kommun_balance.png)
 
-![Figure 9. Exchanges between kommuner on the map: arrows show flows of 0.5 kt or more, colour shows each kommun's net balance.](figures/fig10_kommun_map.png)
+Figures 9 and 10 put the same exchanges on the map. Blue circles show waste
+used within its own kommun; arrows run from the supplying to the receiving
+kommun. Figure 10 colours each flow by the product it replaces: stone, sand
+and lime flow towards Götene and Skövde, wood and pulp towards Mariestad, and
+the Skövde cement plant also takes waste in place of coal.
+
+![Figure 9. Waste exchanged within and between kommuner, MAESTRI + W2RKG, mass and value regimes (flows of 100 t or more).](figures/fig10_kommun_flow_map.png)
+
+![Figure 10. The same exchanges by product replaced (CN chapter). Pie area is the waste used within each kommun.](figures/fig11_kommun_products_map.png)
 
 - **Receivers.** Götene, Mariestad and Skövde receive more than they send.
   Their mineral, paper and cement industries draw by-products from across the
@@ -418,7 +427,7 @@ exactly the results in this report.
 
   County optimum: 141 kt (MAESTRI) or 440 kt (MAESTRI + W2RKG).
 
-![Figure 10. Waste reused in Västra Götaland when exchange stops at kommun or kommunalförbund borders.](figures/fig08_vg_pooling.png)
+![Figure 11. Waste reused in Västra Götaland when exchange stops at kommun or kommunalförbund borders.](figures/fig08_vg_pooling.png)
 
 Distances and transport costs are not yet part of the allocation. Exchanges
 across the county are longer (35–70 km on average at firm level, against
@@ -436,7 +445,7 @@ therefore lower than the value-regime figures in Table 1 (for example 435
 against 462 MSEK for MAESTRI + W2RKG), which come from an allocation that
 maximises value.
 
-![Figure 11. Waste reused under each sensitivity scenario.](figures/fig09_sensitivity.png)
+![Figure 12. Waste reused under each sensitivity scenario.](figures/fig09_sensitivity.png)
 
 | Scenario | Waste, kt | Reused, kt | % of imports (t) | MSEK |
 |---|---|---|---|---|
@@ -514,8 +523,7 @@ that accompanies this document shows aggregated results only:
 
 - industries with fewer than three organisations in a kommun are merged
 - imported products with fewer than three importers in a cell are merged
-- no firm names or positions are published: firm-level exchanges are shown
-  between places of at least three firms (5 km squares, or the kommun centre)
+- no firm names are published; firms appear only as anonymous points
 
 **Suggested citation.** Cohen, J. (2026). *Regional industrial symbiosis in
 Skaraborg: waste as a substitute for imported inputs, 2022.* Working report.
