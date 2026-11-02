@@ -8,6 +8,7 @@ materials that other firms in the region import. The reference year is 2022.
 | | |
 |---|---|
 | Written report: Skaraborg | [reports/skaraborg_report.md](reports/skaraborg_report.md) |
+| About the project | `docs/about.html` |
 | Interactive report: Skaraborg | `docs/skaraborg/` (see *Viewing* below) |
 
 ## Method in one paragraph
@@ -49,7 +50,8 @@ locally, run a web server in `docs/` (for example
 
 SCB (workplace register, foreign trade microdata), Eurostat (waste statistics,
 material flow accounts), Trafikanalys (lorry survey 2021–2023), SGU (aggregate
-statistics), MAESTRI (Patricio et al. 2022), W2RKG (Zhao et al. 2025, *Nature
+statistics), MAESTRI (Evans et al. 2017, doi:10.17863/CAM.12608; method from Patricio et al. 2022,
+doi:10.1016/j.resconrec.2022.106437), W2RKG (Zhao et al. 2025, *Nature
 Communications*, doi:10.1038/s41467-025-66599-7).
 
 Results are model estimates for 2022, not measured flows.

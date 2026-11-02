@@ -19,3 +19,18 @@ code { font-size: .88em; background: var(--head); padding: .05em .3em; border-ra
 figure { margin: 1.75rem 0; }
 figure img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 8px; background: #fff; }
 figcaption { color: var(--muted); font-size: .88rem; margin-top: .45rem; }
+nav.site { display: flex; flex-wrap: wrap; gap: .25rem 1.1rem; font-size: .92rem; padding-bottom: 1rem; border-bottom: 1px solid var(--line); }
+nav.site a[aria-current] { color: var(--text); font-weight: 600; text-decoration: none; }
+/* Wide screens: the contents become a sticky navigation pane on the left. */
+@media (min-width: 1100px) {
+  body { max-width: 52rem; margin-left: max(19rem, calc(50vw - 26rem + 9rem)); }
+  nav#TOC { position: fixed; top: 0; bottom: 0; left: 0; width: 16.5rem; margin: 0; border: 0;
+            border-right: 1px solid var(--line); border-radius: 0; padding: 1.5rem 1rem 2rem 1.25rem;
+            overflow-y: auto; font-size: .88rem; line-height: 1.45; }
+  nav#TOC::before { content: "Contents"; display: block; font-weight: 700; margin-bottom: .5rem; }
+  nav#TOC ul { padding-left: 0; list-style: none; }
+  nav#TOC ul ul { padding-left: .9rem; }
+  nav#TOC li { margin: .3rem 0; }
+  nav#TOC a { color: var(--muted); text-decoration: none; }
+  nav#TOC a:hover, nav#TOC a.active { color: var(--accent); }
+}

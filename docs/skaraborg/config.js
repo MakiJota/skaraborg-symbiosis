@@ -1,6 +1,7 @@
 // Site settings. Edit and redeploy; no build step.
 window.RIS_CONFIG = {
   report: "../reports/skaraborg.html",
+  about: "../about.html",
   public: true,   // aggregated, disclosure-controlled data; no firm-level files
   // Question assistant ("Ask the report"):
   //   "off"     – hide the assistant

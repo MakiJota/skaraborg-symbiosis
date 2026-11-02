@@ -35,8 +35,8 @@ single firm.
   - energy 37 kt
   - quarries 10 kt
 - **Production firms import about 0.46 Mt of raw and semi-finished goods a
-  year, worth 2.5 billion SEK.** Two-thirds of these imports are minerals (CN
-  25) and stone products (CN 68), and the cement and mineral-wool industry
+  year, worth 2.5 billion SEK.** Two-thirds of these imports are minerals
+  (CN 25) and stone products (CN 68), and the cement and mineral-wool industry
   alone accounts for 62 % of the tonnes. These imports are the demand that
   local waste can replace.
 - **How much can be replaced depends above all on what we know about which
@@ -102,7 +102,7 @@ food in Götene and Skara, and cement, stone and concrete across the plains.
 | Waste composition by List of Waste code | firm-level waste profiles | split of each sector's waste into waste types |
 | Domestic extraction by product | Eurostat EW-MFA | regional material balance |
 | Lorry freight (2021–2023) | Trafikanalys, lorry survey | flows to and from the rest of Sweden |
-| Waste → product substitutions | MAESTRI (Patricio et al. 2022); W2RKG knowledge graph (Zhao et al. 2025, *Nature Communications*) | which waste can replace which product |
+| Waste → product substitutions | MAESTRI (Evans et al. 2017; method from Patricio et al. 2022); W2RKG knowledge graph (Zhao et al. 2025, *Nature Communications*) | which waste can replace which product |
 | Firm locations and size classes | firm registry (706 firms in sectors A–E) | firm-level allocation |
 
 ---
@@ -512,9 +512,25 @@ Skaraborg: waste as a substitute for imported inputs, 2022.* Working report.
 
 **References**
 
-- Patricio, J., et al. (2022). MAESTRI database of industrial symbiosis cases.
-- Zhao, et al. (2025). Waste-to-resource knowledge graph (W2RKG). *Nature
-  Communications*. doi:10.1038/s41467-025-66599-7.
+- Evans, S., Benedetti, M. & Holgado Granados, M. (2017). Library of
+  Industrial Symbiosis case studies and linked exchanges (MAESTRI). University
+  of Cambridge. [doi:10.17863/CAM.12608](https://doi.org/10.17863/CAM.12608).
+- Patricio, J., Kalmykova, Y., Rosado, L., Cohen, J., Westin, A. & Gil, J.
+  (2022). Method for identifying industrial symbiosis opportunities.
+  *Resources, Conservation and Recycling*, 185.
+  [doi:10.1016/j.resconrec.2022.106437](https://doi.org/10.1016/j.resconrec.2022.106437).
+- Patricio, J., Jiménez Encarnación, D., Kalmykova, Y. & Rosado, L. (2021).
+  Top-down method and databases for typical product demands of 103
+  manufacturing industries. *Resources, Conservation and Recycling*, 164.
+  [doi:10.1016/j.resconrec.2020.105165](https://doi.org/10.1016/j.resconrec.2020.105165).
+- Rosado, L., Kalmykova, Y. & Patrício, J. (2016). Urban metabolism profiles.
+  An empirical analysis of the material flow characteristics of three
+  metropolitan areas in Sweden. *Journal of Cleaner Production*, 126, 206–217.
+  [doi:10.1016/j.jclepro.2016.02.139](https://doi.org/10.1016/j.jclepro.2016.02.139).
+- Zhao, L., Sun, Y., Ren, J., Gao, H., Xiao, G., et al. (2025). Construction of
+  waste-to-resource knowledge graph for industrial symbiosis identification
+  using large language models. *Nature Communications*.
+  [doi:10.1038/s41467-025-66599-7](https://doi.org/10.1038/s41467-025-66599-7).
 - SCB (2022). Workplace register (FDB); foreign trade microdata.
 - Eurostat. `env_wasgen`; economy-wide material flow accounts.
 - Trafikanalys (2021–2023). Lorry transport survey.

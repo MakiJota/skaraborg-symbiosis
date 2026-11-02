@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About – Industrial Symbiosis in Skaraborg</title>
+<meta name="description" content="About this proof of concept on regional industrial symbiosis in Skaraborg, its building blocks and how to get in touch.">
+<style>
+  :root { --bg: #fbfaf7; --card: #ffffff; --text: #1f2328; --muted: #5b6168; --line: #e3e0d8; --accent: #1d6fb8; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #16181b; --card: #1f2226; --text: #e6e4df; --muted: #a2a6ab; --line: #2e3237; --accent: #6cb2f0; } }
+  html { background: var(--bg); color: var(--text); }
+  body { max-width: 46rem; margin: 0 auto; padding: 2rem 1.25rem 4rem; font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  .site { display: flex; flex-wrap: wrap; gap: .25rem 1.1rem; font-size: .92rem; padding-bottom: 1rem; border-bottom: 1px solid var(--line); margin-bottom: 2rem; }
+  a { color: var(--accent); }
+  h1 { font-size: 2rem; line-height: 1.2; margin: 0 0 1rem; }
+  h2 { font-size: 1.2rem; margin-top: 2.25rem; }
+  .refs li { margin-bottom: .6rem; }
+  .refs .doi { font-size: .9rem; }
+  .contact { list-style: none; padding: 0; display: grid; grid-template-columns: max-content 1fr; gap: .3rem 1rem; }
+  .contact li { display: contents; }
+  .contact b { color: var(--muted); font-weight: 600; }
+  .note { font-size: .88rem; color: var(--muted); border-top: 1px solid var(--line); padding-top: 1rem; margin-top: 2.5rem; }
+</style>
+</head>
+<body>
+  <nav class="site" aria-label="Site">
+    <a href="./">Home</a>
+    <a href="skaraborg/">Interactive report</a>
+    <a href="reports/skaraborg.html">Written report</a>
+    <a href="about.html" aria-current="page">About</a>
+  </nav>
+
+  <h1>About</h1>
+  <p>Hej hej! My name is Jonathan.</p>
+  <p>This work was done for Skaraborg. It is a proof of concept that uses earlier research as building blocks:
+    a reproducible way to estimate how much industrial waste in a region could replace the raw materials its firms
+    buy. The results are model estimates and may contain errors, so read them as an indication of where to look
+    rather than as measured flows.</p>
+  <p>Many thanks to Skaraborg and to Leonardo Rosado for the good conversations about the topic.</p>
+
+  <h2>Building blocks</h2>
+  <ol class="refs">
+    <li>Patricio, J., Kalmykova, Y., Rosado, L., Cohen, J., Westin, A. &amp; Gil, J. (2022). Method for identifying industrial symbiosis opportunities. <em>Resources, Conservation and Recycling</em>, 185.
+      <span class="doi"><a href="https://doi.org/10.1016/j.resconrec.2022.106437">doi:10.1016/j.resconrec.2022.106437</a></span></li>
+    <li>Patricio, J., Jiménez Encarnación, D., Kalmykova, Y. &amp; Rosado, L. (2021). Top-down method and databases for typical product demands of 103 manufacturing industries. <em>Resources, Conservation and Recycling</em>, 164.
+      <span class="doi"><a href="https://doi.org/10.1016/j.resconrec.2020.105165">doi:10.1016/j.resconrec.2020.105165</a></span></li>
+    <li>Rosado, L., Kalmykova, Y. &amp; Patrício, J. (2016). Urban metabolism profiles. An empirical analysis of the material flow characteristics of three metropolitan areas in Sweden. <em>Journal of Cleaner Production</em>, 126, 206–217.
+      <span class="doi"><a href="https://doi.org/10.1016/j.jclepro.2016.02.139">doi:10.1016/j.jclepro.2016.02.139</a></span></li>
+    <li>Evans, S., Benedetti, M. &amp; Holgado Granados, M. (2017). Library of Industrial Symbiosis case studies and linked exchanges (MAESTRI). University of Cambridge.
+      <span class="doi"><a href="https://doi.org/10.17863/CAM.12608">doi:10.17863/CAM.12608</a></span></li>
+    <li>Zhao, L., Sun, Y., Ren, J., Gao, H., Xiao, G. et al. (2025). Construction of waste-to-resource knowledge graph for industrial symbiosis identification using large language models. <em>Nature Communications</em>.
+      <span class="doi"><a href="https://doi.org/10.1038/s41467-025-66599-7">doi:10.1038/s41467-025-66599-7</a></span></li>
+  </ol>
+
+  <h2>Get in touch</h2>
+  <p>If you have comments or suggestions, or want to collaborate on a similar project, feel free to reach out.
+    I'm always happy to talk data, cities and tech!</p>
+  <ul class="contact">
+    <li><b>Email</b> <a href="mailto:jonathan@nodal.se">jonathan@nodal.se</a></li>
+    <li><b>Website</b> <a href="https://nodalworks.se">nodalworks.se</a></li>
+    <li><b>LinkedIn</b> <span>Jonathan Cohen – Urban Data</span></li>
+    <li><b>Instagram</b> <a href="https://www.instagram.com/urba.ant/">@urba.ant</a></li>
+    <li><b>ResearchGate</b> <span>Jonathan Cohen</span></li>
+  </ul>
+
+  <p class="note">The data come from Statistics Sweden (SCB), Eurostat, Trafikanalys and SGU. Confidential microdata are
+    not published: the site shows aggregated results only.</p>
+</body>
+</html>
