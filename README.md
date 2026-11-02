@@ -37,7 +37,8 @@ in this repository. The published data are aggregated:
   its NACE2 group, or into "other industries"
 - an imported product with fewer than three importers in a cell is merged
   into its CN chapter, or into "other goods"
-- no firm-level locations or links are included
+- no firm names or positions are included: firm-level exchanges are shown
+  between places of at least three firms (5 km squares, or the kommun centre)
 
 ## Viewing
 
