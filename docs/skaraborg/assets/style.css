@@ -82,6 +82,7 @@ button, select, input, textarea { font: inherit; color: inherit; }
   width: 30px; height: 30px; border-radius: 8px; flex: none;
   background: conic-gradient(var(--s1) 0 25%, var(--s3) 0 50%, var(--s2) 0 75%, var(--s4) 0);
 }
+.brand-logo { width: 36px; height: 30px; background: none; border-radius: 0; object-fit: contain; }
 .brand-title { font-weight: 650; font-size: 16px; }
 .brand-sub { color: var(--text-secondary); font-size: 12.5px; }
 #nav-list { flex: 1; }

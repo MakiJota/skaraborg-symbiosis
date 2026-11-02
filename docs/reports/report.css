@@ -16,3 +16,6 @@ table { border-collapse: collapse; display: block; overflow-x: auto; max-width: 
 th, td { border-bottom: 1px solid var(--line); padding: .35rem .7rem; text-align: left; vertical-align: top; }
 th { background: var(--head); font-weight: 600; }
 code { font-size: .88em; background: var(--head); padding: .05em .3em; border-radius: 4px; }
+figure { margin: 1.75rem 0; }
+figure img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 8px; background: #fff; }
+figcaption { color: var(--muted); font-size: .88rem; margin-top: .45rem; }
