@@ -2,6 +2,10 @@
 
 *How much of the region's industrial waste could replace raw materials that its firms buy? Reference year 2022.*
 
+**Interactive report:** explore every figure by kommun, industry, product and
+scenario at <https://makijota.github.io/skaraborg-symbiosis/skaraborg/>
+(English and Swedish).
+
 This report quantifies the potential for **regional industrial symbiosis** in
 Skaraborg's 15 kommuner. Symbiosis here means waste from one firm replacing a
 raw or semi-finished material that another firm would otherwise import. The
@@ -496,8 +500,8 @@ The uncertainties, in order of size:
 The analysis is a scripted R pipeline. The same code runs for Skaraborg, each
 of the other kommunalförbund and the whole county, by changing one setting
 (the study area). Microdata from SCB are confidential and are not shared.
-The interactive web report that accompanies this document shows aggregated
-results only:
+The [interactive web report](https://makijota.github.io/skaraborg-symbiosis/skaraborg/)
+that accompanies this document shows aggregated results only:
 
 - industries with fewer than three organisations in a kommun are merged
 - imported products with fewer than three importers in a cell are merged

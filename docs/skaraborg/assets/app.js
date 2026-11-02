@@ -224,6 +224,12 @@ window.RIS = (() => {
       list.append(h("a", { class: "nav-link", href: `#/${id}`, "aria-current": S.section === id ? "page" : null,
         onclick: e => { e.preventDefault(); go(id); } }, h("span", { class: "num", text: String(i) }), t(`nav.${id}`)));
     }
+    const rep = (window.RIS_CONFIG || {}).report;   // written report, set by dashboard/build_public.R
+    if (rep) {
+      list.append(h("div", { class: "nav-group", text: t("nav.g.report") }));
+      list.append(h("a", { class: "nav-link", href: rep, target: "_blank", rel: "noopener" },
+        h("span", { class: "num", text: "↗" }), t("nav.report")));
+    }
   }
   function select(label, value, options, onchange, attrs = {}) {
     const sel = h("select", Object.assign({ "aria-label": label, onchange: e => onchange(e.target.value) }, attrs),
