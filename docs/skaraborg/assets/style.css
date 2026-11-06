@@ -85,6 +85,11 @@ button, select, input, textarea { font: inherit; color: inherit; }
 .brand-logo { width: 36px; height: 30px; background: none; border-radius: 0; object-fit: contain; }
 .brand-title { font-weight: 650; font-size: 16px; }
 .brand-sub { color: var(--text-secondary); font-size: 12.5px; }
+.site-links { display: grid; gap: 2px; padding: 0 0 10px; border-bottom: 1px solid var(--border); }
+.site-link { display: block; padding: 6px 10px; border-radius: 8px; color: var(--text-secondary);
+  text-decoration: none; font-size: 13px; }
+.site-link:hover { background: var(--surface-2); color: var(--text-primary); }
+.site-link.case-link { margin-top: 4px; background: var(--accent-wash); color: var(--accent-ink); font-weight: 600; }
 #nav-list { flex: 1; }
 .nav-group { margin: 10px 0 2px; padding: 0 10px; font-size: 11.5px; text-transform: uppercase;
   letter-spacing: .06em; color: var(--text-muted); font-weight: 600; }

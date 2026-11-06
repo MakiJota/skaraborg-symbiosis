@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Method — Industrial Symbiosis in Skaraborg</title>
+  <meta name="description" content="A plain-language description of the data and allocation process used in the Skaraborg study.">
+  <style>
+    :root { color-scheme: light dark; --bg: #fbfaf7; --text: #1f2328; --muted: #5b6168; --line: #e3e0d8; --accent: #1d6fb8; }
+    @media (prefers-color-scheme: dark) { :root { --bg: #16181b; --text: #e6e4df; --muted: #a2a6ab; --line: #2e3237; --accent: #6cb2f0; } }
+    html { background: var(--bg); color: var(--text); }
+    body { max-width: 48rem; margin: 0 auto; padding: 2rem 1.25rem 4rem; font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+    nav { display: flex; flex-wrap: wrap; gap: .35rem 1.1rem; padding-bottom: 1rem; border-bottom: 1px solid var(--line); margin-bottom: 2rem; }
+    a { color: var(--accent); } h1 { font-size: 2rem; line-height: 1.2; } h2 { margin-top: 2rem; font-size: 1.2rem; }
+    li { margin-bottom: .65rem; } .note { color: var(--muted); border-top: 1px solid var(--line); padding-top: 1rem; margin-top: 2.5rem; }
+  </style>
+</head>
+<body>
+  <nav aria-label="Site">
+    <a href="./">Home</a>
+    <a href="skaraborg/">Interactive report</a>
+    <a href="reports/skaraborg.html">Written report</a>
+    <a href="method.html" aria-current="page">Method</a>
+    <a href="about.html">About</a>
+    <a href="https://makijota.github.io/vg-industrial-symbiosis/">Västra Götaland case ↗</a>
+  </nav>
+  <h1>How the Skaraborg estimates are made</h1>
+  <p>The study follows a reproducible pipeline for the 15 kommuner in Skaraborg, using 2022 as its reference year. The county-wide Västra Götaland study applies the same core method.</p>
+  <ol>
+    <li><strong>Estimate waste generation.</strong> Workplace employment by kommun and industry is multiplied by Swedish waste-per-worker coefficients estimated from national waste and employment data. Waste is split into List of Waste codes using sector profiles; quarry waste is estimated separately.</li>
+    <li><strong>Estimate input demand.</strong> SCB import data for raw and semi-finished goods in production sectors are assigned to local workplaces by their share of the organisation's Swedish workforce. Purchases from Swedish suppliers are not visible as firm-level demand in these data.</li>
+    <li><strong>Match waste to products.</strong> A compatibility matrix connects waste codes to four-digit imported products. The baseline uses documented exchanges from MAESTRI; broader scenarios add plausible, reviewed links from the W2RKG knowledge graph.</li>
+    <li><strong>Allocate compatible flows.</strong> The model allocates waste to compatible demand for the region as a whole, within and between kommuner, and between anonymised firms. The regional result includes an optimisation benchmark; kommun allocation prioritises local matches; firm allocation prioritises nearby compatible buyers.</li>
+    <li><strong>Value and compare.</strong> Allocated tonnes are valued at estimated regional import unit prices. Separate mass- and value-prioritising runs and alternative matching assumptions show how sensitive results are.</li>
+  </ol>
+  <h2>Limitations</h2>
+  <ul>
+    <li>One tonne of waste is assumed to replace one tonne of product, although real processing can require more material or produce losses.</li>
+    <li>Quarry-waste intensities and waste-to-product compatibility are uncertain; scenario results should be read as a range.</li>
+    <li>Allocation rules rank theoretical compatible flows. They do not prove technical suitability, commercial demand, logistics, contracts or actual exchanges.</li>
+  </ul>
+  <p class="note">These are model estimates, not measured flows or forecasts. Read the <a href="reports/skaraborg.html">written report</a>, open the interactive report's <a href="skaraborg/#/method">Method and data section</a>, or compare with the <a href="https://makijota.github.io/vg-industrial-symbiosis/">Västra Götaland County case</a>.</p>
+</body>
+</html>

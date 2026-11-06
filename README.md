@@ -8,8 +8,10 @@ materials that other firms in the region import. The reference year is 2022.
 | | |
 |---|---|
 | Written report: Skaraborg | [reports/skaraborg_report.md](reports/skaraborg_report.md) |
+| Method | `docs/method.html` |
 | About the project | `docs/about.html` |
 | Interactive report: Skaraborg | `docs/skaraborg/` (see *Viewing* below) |
+| Västra Götaland County case | <https://makijota.github.io/vg-industrial-symbiosis/> |
 
 ## Method in one paragraph
 
@@ -43,6 +45,8 @@ The site is static and is served from `docs/` with GitHub Pages:
 *Settings → Pages → Deploy from a branch → `main` / `docs`*. To view it
 locally, run a web server in `docs/` (for example
 `python -m http.server 8000`) and open <http://localhost:8000>.
+The interactive report links to its method and written-report pages, and to
+the companion Västra Götaland County case.
 
 ## Sources
 
